@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "엔트리-용접기",
+  "description": "작품 만들기에서 유용한 기능을 사용 가능하게 해줍니다",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://playentry.org/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "16.png",
+      "32": "32.png"
+    }
+  },
+  "icons": {
+    "16": "16.png",
+    "32": "32.png",
+    "48": "48.png",
+    "128": "128.png"
+  }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --primary: #007BFF;
+      --secondary: #28a745;
+      --background: #f8f9fa;
+    }
+
+    body {
+      width: 350px;
+      padding: 20px;
+      background: var(--background);
+      font-family: 'Segoe UI', '맑은 고딕', sans-serif;
+    }
+
+    .section {
+      margin: 20px 0;
+      padding: 15px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 18px;
+      margin: 12px 0;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      transform: translateY(2px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+      background-color: #0056b3;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .btn-secondary:hover {
+      background-color: #218838;
+      box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #dee2e6;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    }
+
+    .result {
+      padding: 12px;
+      background: #e9ecef;
+      border-radius: 10px;
+      margin: 10px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: #495057;
+      margin: 0 0 15px 0;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <button class="btn" id="getProjectId">작품 ID 확인</button>
+    <div id="projectResult" class="result"></div>
+  </div>
+
+  <div class="section">
+    <button class="btn btn-secondary" id="hideTimer">초시계 숨기기</button>
+    <button class="btn btn-secondary" id="hideAnswer">대답 숨기기</button>
+    <div class="input-group">
+      <input type="number" id="messageLengthInput" placeholder="신호 글자 길이">
+      <button class="btn" id="messageLengthApply">적용</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="input-group">
+      <input type="number" id="fpsInput" placeholder="FPS">
+      <button class="btn" id="fpsApply">적용</button>
+    </div>
+    <button class="btn" id="showFps">현재 FPS 확인</button>
+    <div id="fpsResult" class="result"></div>
+  </div>
+
+  <div class="section">
+    <div class="input-group">
+      <input type="number" id="undoSteps" placeholder="되돌리기 횟수">
+      <button class="btn" style="font-size: 15px;" id="undoButton">되돌리기</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
