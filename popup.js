@@ -125,4 +125,42 @@ document.addEventListener('DOMContentLoaded', () => {
         input.value = '';
         });
     });
+
+    // 장면 추가하기 기능
+    document.getElementById('addScene').addEventListener('click', () => {
+        executeCommand(`
+            try {
+                Entry.scene.addScene();
+                return "새로운 장면이 추가되었습니다";
+            } catch (e) {
+                return "장면 추가 중 오류 발생: " + e.message;
+            }
+        `, (result, error) => {
+            const display = document.getElementById('sceneResult');
+            display.textContent = error || result;
+        });
+    });
+
+    // 글상자 폰트 변경 기능
+    document.getElementById('changeFontApply').addEventListener('click', () => {
+        const fontName = document.getElementById('fontNameInput').value;
+        
+        if (!fontName) {
+            alert('폰트 이름을 입력해주세요!');
+            return;
+        }
+
+        executeCommand(`
+            Entry.playground.object.entity.setFontType('${fontName}');
+            return "폰트를 '${fontName}'으로 변경 시도했습니다.";
+        `, (result, error) => {
+            const display = document.getElementById('fontResult');
+            if (error) {
+                display.textContent = error;
+            } else {
+                display.textContent = result;
+                document.getElementById('fontNameInput').value = '';
+            }
+        });
+    });
 });
