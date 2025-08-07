@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 초시계 숨기기
   document.getElementById('hideTimer').addEventListener('click', () => {
       executeCommand(`
-          Entry.engine.projectTimer.setX(-Number.MAX_VALUE);
+          Entry.engine.projectTimer.setX(-999);
           return "초시계가 숨겨졌습니다";
       `, (result) => {
           console.log(result);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 대답 숨기기
   document.getElementById('hideAnswer').addEventListener('click', () => {
       executeCommand(`
-          Entry.container.inputValue.setX(-Number.MAX_VALUE);
+          Entry.container.inputValue.setX(-999);
           return "대답 입력창이 숨겨졌습니다";
       `, (result) => {
           console.log(result);
