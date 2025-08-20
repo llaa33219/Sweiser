@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "엔트리-용접기",
   "description": "작품 만들기에서 유용한 기능을 사용 가능하게 해줍니다",
-  "version": "2.2",
+  "version": "2.3",
   "permissions": ["activeTab", "scripting"],
   "host_permissions": ["*://playentry.org/ws/*"],
   "action": {
