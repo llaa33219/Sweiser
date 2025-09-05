@@ -113,6 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 변수 길이 변경
+    document.getElementById('variableLengthApply').addEventListener('click', () => {
+        const input = document.getElementById('variableLengthInput');
+        const value = parseInt(input.value);
+        
+        if (isNaN(value)) {
+            alert('숫자를 입력해주세요!');
+            input.value = '';
+            return;
+        }
+        
+        executeCommand(`
+        Entry.variableContainer._maxNameLength = ${value};
+        return "변수 길이가 ${value}자로 변경됨";
+        `, (result) => {
+            console.log(result);
+            input.value = '';
+        });
+    });
+
     // 프레임 속도 보기
     document.getElementById('showFps').addEventListener('click', () => {
         executeCommand('return Entry.FPS;', (result, error) => {
